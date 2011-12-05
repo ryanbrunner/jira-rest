@@ -1,0 +1,3 @@
+class Jira::Field
+
+end

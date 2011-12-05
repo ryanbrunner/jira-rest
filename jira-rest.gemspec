@@ -21,5 +21,9 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   s.add_development_dependency "rspec", "~> 2.7.0"
   s.add_development_dependency "factory_girl", "~> 2.3.2"
+  s.add_development_dependency "i18n", '~> 0.5.0'
+  s.add_development_dependency "hashie", '~> 1.2.0'
+  s.add_development_dependency "vcr", '~> 1.11.3'
+  s.add_development_dependency "webmock", '~> 1.7.8'
   s.add_runtime_dependency "httparty"
 end

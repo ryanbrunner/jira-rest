@@ -1,4 +1,5 @@
 require "jira-rest/version"
+require 'hashie'
 
 module Jira
   autoload :Base, 'jira-rest/base'

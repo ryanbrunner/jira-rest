@@ -1,6 +1,6 @@
 require 'httparty'
 
-class Jira::Issue
+class Jira::Issue < Hashie::Mash
   include HTTParty
 
   # TODO: Config options for these
@@ -8,6 +8,9 @@ class Jira::Issue
   basic_auth 'ryan@influitive.com', 'firefly'
 
   def self.find(key)
-    get("/issue/#{key}")
+    resp = get("/issue/#{key}")
+    raise "Could not find issue - #{resp['errorMessages'].join(",")}" if resp.code != 200
+    self.new(resp['fields'])
   end
+
 end
